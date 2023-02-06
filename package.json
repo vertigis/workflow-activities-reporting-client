@@ -1,0 +1,44 @@
+{
+    "name": "@vertigis/workflow-activities-reporting-client",
+    "version": "0.0.0-semantically-released",
+    "description": "VertiGIS Studio Reporting activities for VertiGIS Studio Workflow",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vertigis/workflow-activities-reporting-client.git"
+    },
+    "license": "MIT",
+    "author": "VertiGIS",
+    "homepage": "https://github.com/vertigis/workflow-activities-reporting-client#readme",
+    "keywords": [
+        "VertiGIS",
+        "Geocortex",
+        "Workflow",
+        "Reporting",
+        "ArcGIS",
+        "GIS"
+    ],
+    "scripts": {
+        "build": "vertigis-workflow-sdk build",
+        "generate": "vertigis-workflow-sdk generate",
+        "lint": "eslint --max-warnings 0 --ext .ts,.tsx src/",
+        "lint:fix": "eslint --max-warnings 0 --ext .ts,.tsx --fix src/",
+        "start": "vertigis-workflow-sdk start"
+    },
+    "dependencies": {
+        "@vertigis/reporting-client": "^1.1.3"
+    },
+    "devDependencies": {
+        "@geocortex/workflow": "5.30.1",
+        "@vertigis/workflow-sdk": "2.0.6",
+        "conventional-changelog-conventionalcommits": "^5.0.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "prettier": "^2.8.3",
+        "typescript": "^4.7.4"
+    },
+    "browserslist": [
+        "last 2 chrome versions",
+        "last 2 edge versions",
+        "last 2 firefox versions",
+        "last 2 safari versions"
+    ]
+}
