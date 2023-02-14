@@ -24,7 +24,7 @@ To use these activities in [VertiGIS Studio Workflow Designer](https://apps.vert
     - API: `JavaScript`
     - URL: The URL to this activity pack manifest
         - Use https://unpkg.com/@vertigis/workflow-activities-reporting-client/activitypack.json for the latest version
-        - Use https://unpkg.com/@vertigis/workflow-activities-reporting-client@1.0.1/activitypack.json for a specific version
+        - Use https://unpkg.com/@vertigis/workflow-activities-reporting-client@1.2.0/activitypack.json for a specific version
         - Use https://localhost:5000/activitypack.json for a local development version
     - Title: Your desired title
     - Tags: Must include `geocortex-workflow-activity-pack`
