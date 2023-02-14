@@ -54,6 +54,17 @@ interface RunReportInputs {
      * @description The output file format of the report. The default is "pdf".
      */
     format?: "docx" | "pdf" | "png" | "rtf" | "xlsx" | string;
+
+    /**
+     * @displayName Service URL
+     * @description The URL of the VertiGIS Studio Reporting service. For example, "https://apps.vertigisstudio.com/reporting". If not specified the URL will be determined from the portal item.
+     */
+    serviceUrl?: string;
+
+    /**
+     * @description An optional token from the Get Report Run Token activity. When used with the Service URL input provides an alternative to the Token input.
+     */
+    runToken?: string;
 }
 
 interface RunReportOutputs {
