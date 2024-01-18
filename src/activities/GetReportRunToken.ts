@@ -1,4 +1,4 @@
-import type { IActivityHandler } from "@geocortex/workflow/runtime";
+import type { IActivityHandler } from "@vertigis/workflow";
 import { getRunToken } from "@vertigis/reporting-client";
 import { DefaultPortalUrl, DefaultServiceUrl } from "./constants";
 
@@ -38,8 +38,14 @@ interface GetReportRunTokenOutputs {
  * @supportedApps EXB, GWV, GVH, WAB
  */
 export default class GetReportRunToken implements IActivityHandler {
-    async execute(inputs: GetReportRunTokenInputs): Promise<GetReportRunTokenOutputs> {
-        const { portalUrl = DefaultPortalUrl, serviceUrl = DefaultServiceUrl, token } = inputs;
+    async execute(
+        inputs: GetReportRunTokenInputs,
+    ): Promise<GetReportRunTokenOutputs> {
+        const {
+            portalUrl = DefaultPortalUrl,
+            serviceUrl = DefaultServiceUrl,
+            token,
+        } = inputs;
 
         const result = await getRunToken(serviceUrl, portalUrl, token);
         return {

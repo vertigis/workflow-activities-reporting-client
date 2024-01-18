@@ -1,4 +1,4 @@
-import type { IActivityHandler } from "@geocortex/workflow/runtime";
+import type { IActivityHandler } from "@vertigis/workflow";
 import { getMetadata } from "@vertigis/reporting-client";
 import { DefaultPortalUrl, DefaultServiceUrl } from "./constants";
 
@@ -64,13 +64,25 @@ interface GetReportMetadataOutputs {
  * @supportedApps EXB, GWV, GVH, WAB
  */
 export default class GetReportMetadata implements IActivityHandler {
-    async execute(inputs: GetReportMetadataInputs): Promise<GetReportMetadataOutputs> {
-        const { itemId, portalUrl = DefaultPortalUrl, runToken, serviceUrl = DefaultServiceUrl } = inputs;
+    async execute(
+        inputs: GetReportMetadataInputs,
+    ): Promise<GetReportMetadataOutputs> {
+        const {
+            itemId,
+            portalUrl = DefaultPortalUrl,
+            runToken,
+            serviceUrl = DefaultServiceUrl,
+        } = inputs;
         if (!itemId) {
             throw new Error("itemId is required");
         }
 
-        const result = await getMetadata(itemId, portalUrl, serviceUrl, runToken);
+        const result = await getMetadata(
+            itemId,
+            portalUrl,
+            serviceUrl,
+            runToken,
+        );
         return {
             result,
         };
