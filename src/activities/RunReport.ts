@@ -1,7 +1,9 @@
-import type { IActivityHandler } from "@geocortex/workflow/runtime";
+import type { IActivityHandler } from "@vertigis/workflow";
 import { run } from "@vertigis/reporting-client";
 
 interface RunReportInputs {
+    /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+
     /**
      * @displayName Item ID
      * @description The ID of the report portal item.
@@ -25,14 +27,23 @@ interface RunReportInputs {
      * @description An object specifying the parameters to submit to the report.
      * The keys of the object must match the parameter names that exist in the report.
      */
-    parameters?: Record<string, string | number | boolean | string[] | number[] | boolean[] | {
-        $type: string;
-        item: {
-            type: string;
-            extent: [[number, number], [number, number]];
-        };
-        itemData: any;
-    }>;
+    parameters?: Record<
+        string,
+        | string
+        | number
+        | boolean
+        | string[]
+        | number[]
+        | boolean[]
+        | {
+              $type: string;
+              item: {
+                  type: string;
+                  extent: [[number, number], [number, number]];
+              };
+              itemData: any;
+          }
+    >;
 
     /**
      * @description The name assigned to the output file. It is used as the name of the tab when viewing the
@@ -65,6 +76,8 @@ interface RunReportInputs {
      * @description An optional token from the Get Report Run Token activity. When used with the Service URL input provides an alternative to the Token input.
      */
     runToken?: string;
+
+    /* eslint-enable @typescript-eslint/no-redundant-type-constituents */
 }
 
 interface RunReportOutputs {
